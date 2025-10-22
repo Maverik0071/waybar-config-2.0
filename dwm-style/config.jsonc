@@ -137,8 +137,8 @@
 	"on-click": "xfce4-taskmanager"
     },
     "memory": {
-        "format": "{}% ",
-	"on-click": "btop"
+        "format": "{}%  ",
+	"on-click": "foot btop "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -147,7 +147,7 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""],
-	"on-click": "btop"
+	"on-click": "foot btop"
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -162,7 +162,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}%  ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -184,17 +184,17 @@
       }
    },
       "custom/separator": {
-    "format": "|",
+    "format": "󰿟",
     "interval": "once",
     "tooltip": false
   },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ipaddr}/{cidr}  ",
+        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected ⚠ ",
 	"on-click": " networkmanager_dmenu",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -210,10 +210,10 @@
         }
     },
     "custom/updater":{
-    "format": " 󰚰 {} ",
+    "format": " 󰚰 {}",
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) ]]",
-    "interval": 15,
+    "interval": 5,
     "on-click": "kitty --class update -T update -o font_size=13 -e yay -Syu && notify-send 'The system has been updated' "
   },
     "pulseaudio": {
@@ -222,8 +222,8 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source": " {volume}% ",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -231,7 +231,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },
