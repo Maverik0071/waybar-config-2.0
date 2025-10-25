@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 40, // Waybar height (to be removed for auto height)
+    "height": 50, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -30,7 +30,7 @@
 	"custom/media"
     ],
     "modules-right": [
-	"separator",
+	//"separator",
 	"tray",
 	"power-profiles-daemon",
 	"separator",
@@ -43,7 +43,7 @@
         "battery",
         "battery#bat2",
 	"separator",
-	"custom/updater",
+	//"custom/updater",
         "custom/power"
     ],
     // Modules configuration
@@ -74,7 +74,7 @@
     },
     "reload_style_on_change": true,
    "custom/logo": {
-    "format":  "  ",
+    "format":  "󱄅 ",
     "on-click": "wofi --show drun",
     "tooltip": false
   },
@@ -132,12 +132,12 @@
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "tooltip": false,
 	"on-click": "xfce4-taskmanager"
     },
     "memory": {
-        "format": "{}%  ",
+        "format": "{}% 󰍛 ",
 	"on-click": "foot btop "
     },
     "temperature": {
@@ -167,7 +167,7 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -177,23 +177,23 @@
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
+        "default": " ",
+        "performance": " ",
+        "balanced": "󰗑  ",
+        "power-saver": " "
       }
    },
       "custom/separator": {
-    "format": "󰿟",
+    "format": "|",
     "interval": "once",
-    "tooltip": false
+    "tooltip": true
   },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr}  ",
-        "tooltip-format": "{ifname} via {gwaddr}  ",
-        "format-linked": "{ifname} (No IP)  ",
+        "tooltip-format": "{ifname} via {gwaddr} 󰣺 ",
+        "format-linked": "{ifname} (No IP) 󰣺 ",
         "format-disconnected": "Disconnected ⚠ ",
 	"on-click": " networkmanager_dmenu",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
@@ -205,7 +205,7 @@
       "format-icons": {
       "default": " ",
       "performance": " ",
-      "balanced": " ",
+      "balanced": "󰗑 ",
       "power-saver": " "
         }
     },
@@ -223,7 +223,7 @@
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": " {volume}% ",
-        "format-source-muted": " ",
+        "format-source-muted": "󱄠 ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -231,7 +231,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [" ", " ", " "]
+            "default": ["󰕿 ", "󰖀 ", "󰕾 "]
         },
         "on-click": "pavucontrol"
     },
@@ -241,8 +241,8 @@
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
-            "default": "🎜"
+            "spotify": " ",
+            "default": "🎜 "
         },
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
