@@ -73,10 +73,11 @@
         }
     },
     "reload_style_on_change": true,
-   "custom/logo": {
-    "format":  "󱄅 ",
+    "custom/logo": {
+    "format": "  ",
+    "icon-size": 30,
     "on-click": "wofi --show drun",
-    "tooltip": false
+    "tooltip": true
   },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -119,7 +120,7 @@
         }
     },
     "tray": {
-         "icon-size": 25,
+         "icon-size": 30,
         "spacing": 20,
         // "icons": {
         //   "blueman": "bluetooth",
@@ -134,10 +135,10 @@
     "cpu": {
         "format": "{usage}%  ",
         "tooltip": false,
-	"on-click": "xfce4-taskmanager"
+	"on-click": "plasma-systemmonitor"
     },
     "memory": {
-        "format": "{}% 󰍛 ",
+        "format": "{}%  ",
 	"on-click": "foot btop "
     },
     "temperature": {
@@ -146,13 +147,13 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""],
+        "format-icons": [" ", " ", " "],
 	"on-click": "foot btop"
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
         "states": {
@@ -167,7 +168,7 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -179,7 +180,7 @@
       "format-icons": {
         "default": " ",
         "performance": " ",
-        "balanced": "󰗑  ",
+        "balanced": "  ",
         "power-saver": " "
       }
    },
@@ -195,7 +196,7 @@
         "tooltip-format": "{ifname} via {gwaddr} 󰣺 ",
         "format-linked": "{ifname} (No IP) 󰣺 ",
         "format-disconnected": "Disconnected ⚠ ",
-	"on-click": " networkmanager_dmenu",
+	"on-click": "kitty nmtui",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "power-profiles-daemon": {
@@ -205,16 +206,16 @@
       "format-icons": {
       "default": " ",
       "performance": " ",
-      "balanced": "󰗑 ",
+      "balanced": "  ",
       "power-saver": " "
         }
     },
     "custom/updater":{
-    "format": " 󰚰 {}",
+    "format": "  {}",
     "exec": "checkupdates | wc -l",
     "exec-if": "[[ $(checkupdates | wc -l) ]]",
     "interval": 5,
-    "on-click": "kitty --class update -T update -o font_size=13 -e yay -Syu && notify-send 'The system has been updated' "
+    "on-click": "kitty --class update -T update -o font_size=13 -e sudo dnf update --refresh && notify-send 'The system has been updated' "
   },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -231,7 +232,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["󰕿 ", "󰖀 ", "󰕾 "]
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },
@@ -249,9 +250,10 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : " ⏻ ",
 		"tooltip": false,
 		"on-click": "wlogout",
+		"icon-size": "45",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
 		"shutdown": "shutdown",
