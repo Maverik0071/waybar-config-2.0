@@ -2,7 +2,7 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 50, // Waybar height (to be removed for auto height)
+    "height": 45, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -18,12 +18,12 @@
 	"separator",
         "temperature",
 	"sepearator",
-	"sway/window"
+	"hyprland/window"
     ],
     "modules-center": [
-	"sway/workspaces",
+	"hyprland/workspaces",
 	"sepearator",
-	"sway/mode",
+	"hyprland/mode",
 	"sway/scratchpad",
 	"sepearator",
 	"mpd",
@@ -34,12 +34,12 @@
 	"tray",
 	"power-profiles-daemon",
 	"separator",
-        "pulseaudio",
+       /* "pulseaudio",
 	"separator",
         "network",
 	"separator",
         "backlight",
-        "separator",
+        "separator",*/
         "battery",
         "battery#bat2",
 	"separator",
@@ -74,7 +74,7 @@
     },
     "reload_style_on_change": true,
     "custom/logo": {
-    "format": "  ",
+    "format": " 󱄅 ",
     "icon-size": 30,
     "on-click": "wofi --show drun",
     "tooltip": true
@@ -135,10 +135,10 @@
     "cpu": {
         "format": "{usage}%  ",
         "tooltip": false,
-	"on-click": "plasma-systemmonitor"
+	"on-click": "xfce4-taskmanager"
     },
     "memory": {
-        "format": "{}%  ",
+        "format": "{}% 󰍛 ",
 	"on-click": "foot btop "
     },
     "temperature": {
@@ -163,27 +163,27 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄 ",
+        "format-plugged": "{capacity}% 󰂅 ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": ["󰁺 ", "󰁼 ", "󰁾 ", "󰂀 ", "󰁹 "]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "power-profiles-daemon": {
+    /*"power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
         "default": " ",
         "performance": " ",
-        "balanced": "  ",
+        "balanced": "󰗑 ",
         "power-saver": " "
       }
-   },
+   },*/
       "custom/separator": {
     "format": "|",
     "interval": "once",
@@ -196,7 +196,7 @@
         "tooltip-format": "{ifname} via {gwaddr} 󰣺 ",
         "format-linked": "{ifname} (No IP) 󰣺 ",
         "format-disconnected": "Disconnected ⚠ ",
-	"on-click": "kitty nmtui",
+	"on-click": "kitty networkmanager_dmenu",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "power-profiles-daemon": {
@@ -206,7 +206,7 @@
       "format-icons": {
       "default": " ",
       "performance": " ",
-      "balanced": "  ",
+      "balanced": "󰗑 ",
       "power-saver": " "
         }
     },
@@ -223,7 +223,7 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": " {volume}% ",
+        "format-source": " {volume}% 󰕾",
         "format-source-muted": "󱄠 ",
         "format-icons": {
             "headphone": "",
@@ -232,7 +232,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [" ", " ", " "]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
     },
@@ -250,7 +250,7 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : " ⏻ ",
+        "format" : "󰐥 ",
 		"tooltip": false,
 		"on-click": "wlogout",
 		"icon-size": "45",
